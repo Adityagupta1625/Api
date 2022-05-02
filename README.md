@@ -3,7 +3,7 @@
 - Express
 - Node.js
 
-## Installation
+## Instalation
 
 - Clone the repositry.
 - use <code> npm init </code> to install required packages.
