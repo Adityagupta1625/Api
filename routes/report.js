@@ -17,13 +17,15 @@ router.post('/',async (req,res)=>{
         
         if(reportData){
            let usersArr=reportData.users;
-            usersArr.push(req.body.reportDetails.userID);
+            
         
             let price=req.body.reportDetails.price/req.body.reportDetails.convFctr;
             let usersNum=usersArr.length;
 
             let newPrice=(reportData.price*usersNum+price)/(usersNum+1);
-
+            
+            usersArr.push(req.body.reportDetails.userID);
+            
             await reportData.updateOne({
                 $set:{
                   users:usersArr,
